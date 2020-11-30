@@ -13,11 +13,24 @@
     <link rel="stylesheet" href="veautiful-docs.css" />
     <link rel="stylesheet" href="scatter.css" />
     <link rel="stylesheet" href="vdeck.css" />
+
+    <link rel="stylesheet" href="importedCSS/wren.css" />
+    <link rel="stylesheet" href="importedCSS/diffusion.css" />
+    <link rel="stylesheet" href="importedCSS/lavamaze.css" />
+
 </head>
 <body>
     <div id="render-here">
         <p>Loading. This site has been tested with Chrome, Safari, and Firefox.</p>
     </div>
+
+
+    <script>
+        // As we're not hosting the Lava Maze images, we need to tell the Lava Maze library where to get them from
+        lavaSettings = {
+            imageBase: "https://www.wbillingsley.com/lavamaze/"
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>

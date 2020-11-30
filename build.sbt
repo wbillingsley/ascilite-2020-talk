@@ -18,6 +18,13 @@ libraryDependencies ++= Seq(
   "com.github.wbillingsley.veautiful" %%% "scatter" % "master-SNAPSHOT"
 )
 
+// Import the Circuits Up materials
+libraryDependencies += "com.github.theintelligentbook" % "circuitsup" % "master-SNAPSHOT"
+
+// Import the Thinking About Programming materials
+libraryDependencies += "com.github.theintelligentbook" % "thinkingaboutprogramming" % "master-SNAPSHOT"
+
+
 val deployScript = taskKey[Unit]("Copies the fullOptJS script to deployscripts/")
 
 // Used by Travis-CI to get the script out from the .gitignored target directory
