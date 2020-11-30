@@ -6,7 +6,7 @@
 package talk
 
 import com.wbillingsley.veautiful.html.{<, DElement, Markup, VHtmlNode, ^}
-import com.wbillingsley.veautiful.templates.VSlides
+import com.wbillingsley.veautiful.templates.{DeckBuilder, VSlides}
 
 import scala.collection.mutable
 import scala.scalajs.js
@@ -80,28 +80,6 @@ object Common {
     s"`git clone https://github.com/$user/$project.git`"
   }
 
-  def titleCard(title:String, subtitle:String, authorCard:VHtmlNode, logos:VHtmlNode) = {
-    <.div(
-      <.h1(^.attr("style") := "margin-bottom: 0; font-size: 96px", title),
-      <.h2(^.attr("style") := "margin-bottom: 150px", subtitle),
-      <.div(^.attr("style") := "display: inline-flex;",
-        authorCard
-      ),
-      <.div(logos)
-    )
-  }
-
-  def bootStrapMediaBox(imageUrl:String, content:VHtmlNode) = {
-    <.div(^.cls := "media",
-      <.img(^.src := imageUrl, ^.cls := "mr-3", ^.attr("style") := "height: 150px"),
-      <.div(^.cls := "media-body", ^.attr("style") := "text-align: left;", content)
-    )
-  }
-
-  def uneLogo = <.img(
-    ^.src := "images/workshop/unelogo.png",
-    ^.attr("style") := "position: absolute; bottom: 20px; left:910px; max-height: 150px;"
-  )
 
   val willCcBy:String =
     """
@@ -130,6 +108,8 @@ object Common {
       <.div(Talk.deck.atSlide(page))
     )
   }
+
+
 
 
 
