@@ -5,7 +5,7 @@ import com.wbillingsley.veautiful.templates.{Challenge, DeckBuilder, VSlides}
 import Common._
 import Template._
 import Challenge._
-import circuitsup.mosfets.NMos
+import fromCircuitsUp.NMos
 import coderunner.LoggingPrefabCodable
 import willtap.Common
 import willtap.control.States
@@ -26,16 +26,40 @@ object Talk {
           """<b>William Billingsley</b> <br />
             |University of New England, Australia <br />
             |wbilling@une.edu.au <br />
-            |https://www.wbillingsley.com/ascilite2020talk
+            |https://www.wbillingsley.com/ascilite-2020-talk/
             |""".stripMargin
         )
       ),
       logos = uneLogo
     )
     .markdownSlide(
+      """## Links
+        |
+        |Caveat: This is a talk about a live project; I'll talk about more than is in the paper.
+        |
+        |* This talk:
+        |
+        |  - Live deck: https://www.wbillingsley.com/ascilite-2020-talk/
+        |  - Source code: https://github.com/wbillingsley/ascilite-2020-talk
+        |
+        |* Veautiful:
+        |
+        |  - Homepage: https://wbillingsley.github.io/veautiful
+        |  - GitHub project: https://github.com/wbillingsley/veautiful
+        |
+        |* The Intelligent Book demos:
+        |
+        |  - *Circuits Up!*: https://theintelligentbook.com/circuitsup
+        |  - *Thinking About Programming*: https://theintelligentbook.com/thinkingaboutprogramming
+        |  - *The Adventures of Will Scala*: https://theintelligentbook.com/willscala
+        |  - Homepage (needs updating): https://theintelligentbook.com/
+        |
+        |""".stripMargin
+    )
+    .markdownSlide(
       s""" ## Agenda
         |
-        | 1. Motivational - things it's still hard to do online
+        | 1. Motivational - making courses proddable
         |
         | 2. Revisiting the Intelligent Book - *"Courses that understand what they teach"*
         |
@@ -53,7 +77,7 @@ object Talk {
         |
         |    - Edit, publish, and consume like it's open source
         |
-        | 5. Behind the scences
+        | 5. Behind the scenes
         |
         |    - Veautiful and VSlides
         |
@@ -85,7 +109,7 @@ object Talk {
       caption="Far Out Science, The Coding Escape, Tamworth 2018."
     )
     .markdownSlide(
-      """## The Intelligent Book (circa 2009)
+      """## The Intelligent Book (circa 2003 - 2009)
         |
         |* "Books that understand what they teach"
         |
@@ -108,11 +132,12 @@ object Talk {
       cover = false
     )
     .sectionTitle(
-      title="Fifteen years later",
-      subtitle="In the early 2000s, browsers weren't up to the job. Now they are."
+      title="Ten years later",
+      subtitle="Over the last decade, how we program the web has transformed."
     )
     .sectionTitle(
-      title="Towards seamless intelligent content..."
+      title="The Intelligent Book (revisited)",
+      subtitle = "Towards Seamless\nIntelligent Content..."
     )
     .veautifulSlide(<.div(
         <.h2("From \"Circuits Up!\""), NMos.Page3
@@ -166,7 +191,7 @@ object Talk {
         |  - e.g. [Class Modelling slides](http://turing.une.edu.au/~cosc220/sync/lectures/cosc220/lecture.html?Class%20Modelling.md#1)
         |    source: http://turing.une.edu.au/~cosc220/sync/lectures/cosc220/Class%20Modelling.md#1
         |
-        |* **VDeck** - make "programmable slide decks" almost as easy as Markdown-based decks.
+        |* **Veautiful VSlides** - make "programmable slide decks" almost as easy as Markdown-based decks.
         |
         |  - Embedding live exercises into the slide deck, so students can try it at home
         |    https://theintelligentbook.com/thinkingaboutprogramming/#/deck/commandsAndFunctions/17
@@ -174,20 +199,14 @@ object Talk {
         |  - Explorable interactive widgets, blurring the distinction between slides and notes
         |    https://theintelligentbook.com/thinkingaboutprogramming/#/deck/sensorsAndMotors/11
         |
-        |  - Full source of **this deck**:
+        |  - Source code for this talk:
         |    https://github.com/wbillingsley/ascilite-2020-talk/blob/master/src/main/scala/talk/Talk.scala
         |
         |""".stripMargin)
     .markdownSlide(
-      """## ... Tutorials and challenge environments ...
+      """## Tutorials and challenge environments
         |
         |* Working towards making these (almost) as easy to write as decks
-        |
-        |  - sequences content and exercises into levels and stages
-        |
-        |  - adds "completion logic" that can turn into auto-marking
-        |
-        |  - adds ways in which the tutorial text can update to match progress in a stage
         |
         |  - e.g. Keeping progress in book-like tutorial exercises
         |    https://theintelligentbook.com/circuitsup/#/latches/0/0
@@ -195,24 +214,66 @@ object Talk {
         |  - e.g. Game-like programming challenges in the browser
         |    https://theintelligentbook.com/thinkingaboutprogramming/#/challenge/microRat/0/0
         |
-        |""".stripMargin)
+        |""".stripMargin
+    )
     .markdownSlide(
-      """## ... that can be published as course sites
+      """## Enabling proddability and tinkering
+        |
+        |When decks can be *brimming* with models and toys, we can show much more subtlety in how things evolve:
+        |
+        |* Breaking down the steps of a problem, variations on a problem
+        |
+        |  - https://theintelligentbook.com/thinkingaboutprogramming/#/deck/states/10
+        |
+        |* Evolving models to think about new problems
+        |
+        |  1. [Turtle graphics](https://theintelligentbook.com/thinkingaboutprogramming/#/challenge/turtleGraphics/3/0)
+        |
+        |  2. [Sailing into the Channel](https://theintelligentbook.com/thinkingaboutprogramming/#/deck/closedLoop/6)
+        |
+        |  3. [A line following robot](https://theintelligentbook.com/thinkingaboutprogramming/#/deck/closedLoop/22)
+        |
+        |  4. [Bumping into things](https://theintelligentbook.com/thinkingaboutprogramming/#/challenge/microRat/2/1)
+        |
+        |""".stripMargin
+    )
+    .sectionTitle(
+      title="The Intelligent Book (revisited)",
+      subtitle = "... in continuously deployed courses"
+    )
+    .markdownSlide(
+      """## Composability, Reuse, and Publication
+        |
+        |Demo course sites
         |
         |* [Circuits Up!](https://theintelligentbook.com/circuitsup/)
         |
         |* [Thinking about Programming](https://theintelligentbook.com/thinkingaboutprogramming/)
         |
         |* [Will Scala](https://theintelligentbook.com/willscala/)
+        |
+        |* This talk
+        |
+        |...automatically tested and published by public infrastructure
+        |
+        |* https://travis-ci.com/github/theIntelligentBook/thinkingaboutprogramming/builds
+        |
+        |* https://github.com/wbillingsley/ascilite-2020-talk/actions
+        |
+        |... that have version history and can be cloned ...
+        |
+        |* Public outreach: https://theintelligentbook.com/thinkingaboutprogramming
+        |
+        |* Private clone: http://turing.une.edu.au/~ict100/tap/
+        |
         |""".stripMargin)
-    .sectionTitle(
-      title="... in continuously deployed courses",
-      subtitle = "Software meanings of 'publishing' and 'reuse' are much more sophisticated than OER"
-    )
     .markdownSlide(
       """## Reusing materials
         |
-        |* Software meanings of "reuse" are much more sophisticated than OER.
+        |* Software meanings of "reuse" are more sophisticated than OER. e.g. we can import and reuse individual slides,
+        |  decks and models from other course sites.
+        |
+        |  In this deck:
         |
         |  ```scala
         |  // Import the Circuits Up materials
@@ -222,31 +283,16 @@ object Talk {
         |* Adding a model from Thinking About Programming into this deck:
         |
         |  ```scala
-        |  .veautifulSlide(
-        |      lmSnobot.slide
-        |  )
+        |  .veautifulSlide(lmSnobot.slide)
         |  ```
         |
-        |* But we can also import models from other sites to build our own
-        |
-        |  - e.g. *Thinking About Programming* imports the circuit model from *Circuits Up* to demo motors
+        |* But we can also import models from other sites to build our own examples (e.g. import the circuit system)
+        |  http://turing.une.edu.au/~ict100/tap/#/deck/sensorsAndMotors/0
         |
         |""".stripMargin
     )
     .markdownSlide(
-      """## Importing layout templates
-        |
-        |In this slide deck, there are some custom slide layouts, e.g. for the title deck.
-        |
-        |Importing a template into a deck:
-        |
-        |```scala
-        |import Template._
-        |```
-        |
-        |""".stripMargin)
-    .markdownSlide(
-      """## Continuous deployment
+      """## Course materials as digital products
         |
         |Existing public infrastructure for open source allows us to support
         |
@@ -255,6 +301,8 @@ object Talk {
         |* Version control and collaboration
         |
         |* Mirroring a public and a private course
+        |
+        |* Embedding connections to other services
         |
         |""".stripMargin
     )
@@ -265,9 +313,9 @@ object Talk {
         |* Front-end frameworks, e.g. React.js, Angular, d3, have become very popular recently.
         |  However -
         |
-        |  - they are high-friction with each other
+        |  - they are opinionated and high-friction with each other
         |
-        |  - they are *opinionated* (e.g. React makes it hard to access the raw nodes in the page)
+        |  - e.g. React virtual DOM vs d3 binding arrays to document nodes
         |
         |* [Veautiful](https://wbillingsley.com/veautiful) is an adaptable front-end for education
         |
@@ -276,6 +324,36 @@ object Talk {
         |  - lower friction, so components from React, Angular, Vue, d3, etc can be incorporated
         |
         |""".stripMargin)
+    .markdownSlide(
+      """## Diversity of styles of components needed for education
+        |
+        |* Scatter (custom blocks language) vs Ace.js (third-party)
+        |  https://theintelligentbook.com/thinkingaboutprogramming/#/challenge/rescueLine/2/5
+        |
+        |* d3-like graphs alongside React-like diagrams alongside updating text
+        |  https://theintelligentbook.com/circuitsup/#/latches/0/0
+        |
+        |""".stripMargin
+    )
+    .markdownSlide(
+      """## Simple composability
+        |
+        |Because it is built on a front end framework,
+        |
+        |* creating reusable components
+        |
+        |* creating reusable templates
+        |
+        |* creating reusable models and exercises
+        |
+        |* creating reusable sites
+        |
+        |* embedding code into components
+        |
+        |come "baked in".
+        |
+        |""".stripMargin)
+    .sectionTitle("The Intelligent Book", "Towards course sites brimming with reusable, proddable models")
     .renderNode
 
 }
