@@ -51,7 +51,8 @@ object NMos {
              |  programmable
              |
              |* For example, the embedded circuit simulator on the right, simulating an nMOSFET
-             |  (used in the digital electronics unit)
+             |
+             |For more examples, see [Circuits Up!](https://theintelligentbook.com/circuitsup)
              |""".stripMargin
         )
       )
