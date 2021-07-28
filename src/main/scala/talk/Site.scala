@@ -24,8 +24,8 @@ object ITICSESite {
     site.toc = site.Toc(
       "Home" -> site.HomeRoute,
       "Talks" -> site.Toc(
+        "ASCILITE 2020" -> site.addDeck("ASCILITE Talk", ASCILITE2020talk.deck),
         "ITiCSE" -> site.addDeck("ITICSE Talk", ITiCSETalk2021.deck),
-        "UNE Symposium" -> site.addDeck("UNE Symposium 2021", ITiCSETalk2021.deck),
       )
     )
 
