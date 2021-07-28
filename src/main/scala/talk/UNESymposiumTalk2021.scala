@@ -18,7 +18,7 @@ object UNESymposiumTalk2021 {
   val deck = new DeckBuilder(1920, 1080)
     .titleSlide(
       title="Gameful Open Source Self-Publishing. And Robots",
-      subtitle="",
+      subtitle="https://www.wbillingsley.com/ascilite-2020-talk/#/decks/uneSymposium2021/0",
       authorCard = <.div(
         <.div(^.attr("style") := "display: inline-block; margin-right: 50px;",
           bootStrapMediaBox(
@@ -59,28 +59,22 @@ object UNESymposiumTalk2021 {
       cover = true
     )
     .landscapeImageSlide(
-      image="images/workshop/coderchallenge tam 2019.jpg",
-      caption="UNE Cisco Coders Challenge 2019, Peel High School, Tamworth",
-      cover = true
-    )
-    .landscapeImageSlide(
       image="images/workshop/faroutscience2019.jpg",
       caption="Far Out Science, The Coding Escape, Tamworth 2018.",
       cover = true
     )
+    .sectionTitle(
+      title="But we're not in a physical context",
+      subtitle="Introducing a Diploma of Information Technology (Feb 2020)"
+    )
     .markdownSlide(
       """## Our context
         |
-        |Introducing a Diploma of Information Technology (Feb 2020)
-        |
         |* A mostly-online cohort (you might be the only student in your city)
         |
-        |* Approx. 50% of students study part-time (they struggle to find a common time to meet virtually too)
+        |* Mostly part-time (they struggle to find a common time to meet virtually too)
         |
         |* A mostly-mature age cohort.
-        |
-        |  - 70% of BCompSc students older than 25.
-        |  - Median age in DIT that we introduced (30-34) actually slightly older than BCompSc (25-29).
         |
         |Oh, and a pandemic.
         |""".stripMargin
@@ -101,10 +95,6 @@ object UNESymposiumTalk2021 {
     .veautifulSlide(<.div(
       <.h2("Prod it and see..."), NMos.Page3
     ))
-    .sectionTitle(
-      title="Which brings us to our robot games...",
-      subtitle=""
-    )
     .veautifulSlide(
       textAndEx(
         markdown(
@@ -207,7 +197,7 @@ object UNESymposiumTalk2021 {
       cover = true
     )
     .markdownSlide(
-      """## Let's jump forward to 2004-2015...
+      """## 2004-2015 "Markdown" made text formats incredibly popular...
         |
         |This is a slide deck from Software Development Studio 2. It looks like PowerPoint.
         |
@@ -231,7 +221,7 @@ object UNESymposiumTalk2021 {
         |""".stripMargin
     )
     .markdownSlide(
-      """## Programmers like text...
+      """## Why programmers like text formats...
         |
         |We can put it in version control:
         |
@@ -243,16 +233,16 @@ object UNESymposiumTalk2021 {
         |
         |Because it's all loaded via HTML and JavaScript, we can load it in our browser:
         |
-        |* On turing []()
+        |* On turing [https://turing.une.edu.au/~cosc220/sync/lectures/cosc220/lecture.html?Class%20Modelling.md#1](https://turing.une.edu.au/~cosc220/sync/lectures/cosc220/lecture.html?Class%20Modelling.md#1)
         |
-        |* For today's demo, on GitHub Pages []()
+        |* For today's demo, on GitHub Pages [https://unestudio.github.io/cosc220-sync-lectures/lecture.html?Class Modelling.md#1](https://unestudio.github.io/cosc220-sync-lectures/lecture.html?Class Modelling.md#1)
         |
         |""".stripMargin
     )
     .markdownSlide(
       s"""## Going smarter with Doctacular and GitHub Actions
         |
-        |Trying to do a whole site with Markdown is messy. And it's harder to embed interactive elements.
+        |Trying to do a whole site with Markdown is messy & it's harder to embed interactive elements.
         |
         |Instead, let's allow a course site to include *some code*. The LaTeX of course publishing.
         |Then, we can put our source in version control:
@@ -261,12 +251,12 @@ object UNESymposiumTalk2021 {
         |  https://github.com/theintelligentbook/thinkingaboutprogramming/
         |
         |* This talk  \t
-        |  https://github.com/wbillingsley/ascilite-2020-talk/
+        |  https://github.com/wbillingsley/ascilite-2020-talk/blob/master/src/main/scala/talk/UNESymposiumTalk2021.scala
         |
         |* The Adventures of Will Scala  \t
         |  https://github.com/theintelligentbook/willscala
         |
-        |*which GitHub will then compile into a site for us*:
+        |... which GitHub will then compile into a site for us:
         |
         |* https://theintelligentbook.github.io/thinkingaboutprogramming)
         |
@@ -279,9 +269,9 @@ object UNESymposiumTalk2021 {
     .markdownSlide(
       """## Two last demos
         |
-        |* You can't download a Moodle site. You can download this talk and it will work!
+        |* You can [download this talk](https://github.com/wbillingsley/ascilite-2020-talk/archive/refs/heads/gh-pages.zip) and it will work!
         |
-        |* And let's edit this line live on GitHub and trigger an action to recompile the site:
+        |* And let's [edit this line on GitHub](https://github.com/wbillingsley/ascilite-2020-talk/blob/master/src/main/scala/talk/UNESymposiumTalk2021.scala) and trigger an action to recompile the site:
         |
         |  *Mamma mia, here we go again...*
         |

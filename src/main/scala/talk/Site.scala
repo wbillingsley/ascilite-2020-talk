@@ -30,7 +30,7 @@ object ITICSESite {
       )
     )
 
-    site.home = () => site.renderDeck("ITICSE Talk", 0)
+    site.home = () => site.renderDeck("ASCILITE Talk", 0)
     Styles.installStyles()
     site.attachTo(n)
   }
