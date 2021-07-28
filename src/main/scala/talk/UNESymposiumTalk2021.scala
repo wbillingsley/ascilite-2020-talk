@@ -18,7 +18,7 @@ object UNESymposiumTalk2021 {
   val deck = new DeckBuilder(1920, 1080)
     .titleSlide(
       title="Gameful Open Source Self-Publishing. And Robots",
-      subtitle="https://www.wbillingsley.com/ascilite-2020-talk/#/decks/uneSymposium2021/0",
+      subtitle="",
       authorCard = <.div(
         <.div(^.attr("style") := "display: inline-block; margin-right: 50px;",
           bootStrapMediaBox(
@@ -27,6 +27,7 @@ object UNESymposiumTalk2021 {
               """<b>William Billingsley</b> <br />
                 |University of New England, Australia <br />
                 |wbilling@une.edu.au <br />
+                |https://www.wbillingsley.com/ascilite-2020-talk/#/decks/uneSymposium2021/0
                 |""".stripMargin
             )
           ),
@@ -41,7 +42,7 @@ object UNESymposiumTalk2021 {
         |> Escaping from dungeons filled with nefarious blob guards. Landing on the Moon.
         |> This talk gives a whirlwind tour of my “CS0” course and some of the techniques behind it.
         |
-        |The boring acadamic version - it's an abridged version of two presentations:
+        |An abridged version of two presentations:
         |
         |* *"Revisiting the Intelligent Book: Towards Seamless Intelligent Content and Continuously Deployed Courses"* (ASCILITE, 2020)
         |* *"An Accelerated CS0 for Online Mature-Age Part-Time Students"* (ITiCSE, 2021)
@@ -235,7 +236,7 @@ object UNESymposiumTalk2021 {
         |
         |* On turing [https://turing.une.edu.au/~cosc220/sync/lectures/cosc220/lecture.html?Class%20Modelling.md#1](https://turing.une.edu.au/~cosc220/sync/lectures/cosc220/lecture.html?Class%20Modelling.md#1)
         |
-        |* For today's demo, on GitHub Pages [https://unestudio.github.io/cosc220-sync-lectures/lecture.html?Class Modelling.md#1](https://unestudio.github.io/cosc220-sync-lectures/lecture.html?Class Modelling.md#1)
+        |* For today's demo, on GitHub Pages [https://unesestudio.github.io/cosc220-sync-lectures/lecture.html?Class%20Modelling.md#1](https://unesestudio.github.io/cosc220-sync-lectures/lecture.html?Class%20Modelling.md#1)
         |
         |""".stripMargin
     )
