@@ -47,18 +47,11 @@ object NMos {
       <.div(
         Common.marked(
           s"""
-             |### n-Channel MOSFET
+             |* I'd started developing a kit for writing "Intelligent Books" that let us make the learning environment
+             |  programmable
              |
-             |This time, we've given you control of both the gate voltage and V<sub>DD</sub> to play around with.
-             |
-             |The chart still charts V<sub>DD</sub> against current, but it'll reset as you change the gate voltage.
-             |This should let you draw the chart, then alter the gate voltage, and draw it again to see how it's changed.
-             |
-             |As the gate voltage rises above the threshold voltage (1.2V), more and more current can flow as the
-             |channel gets wider (you should see the pink channel get wider). Below 1.2V, though, nothing can flow at all.
-             |
-             |In a digital circuit, that lets it act as an electronic switch. To turn it on, we set the gate voltage high.
-             |To turn it off, we set the gate voltage low.
+             |* For example, the embedded circuit simulator on the right, simulating an nMOSFET
+             |  (used in the digital electronics unit)
              |""".stripMargin
         )
       )
