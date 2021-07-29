@@ -274,7 +274,7 @@ object UNESymposiumTalk2021 {
         |
         |* And let's [edit this line on GitHub](https://github.com/wbillingsley/ascilite-2020-talk/blob/master/src/main/scala/talk/UNESymposiumTalk2021.scala) and trigger an action to recompile the site:
         |
-        |  *Mamma mia, here we go again...*
+        |  *Thank you for the music*
         |
         |""".stripMargin
     )
