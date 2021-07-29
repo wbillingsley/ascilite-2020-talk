@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intelligent Book talks 2020/21</title>
+
+    <link rel="icon" type="image/png" href="images/snoboticon.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans|Michroma" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="veautiful-docs.css" />
+    <link rel="stylesheet" href="scatter.css" />
+    <link rel="stylesheet" href="vdeck.css" />
+
+
+    <link rel="stylesheet" href="importedCSS/wren.css" />
+    <link rel="stylesheet" href="importedCSS/diffusion.css" />
+    <link rel="stylesheet" href="importedCSS/lavamaze.css" />
+</head>
+<body>
+
+<div id="render-here">
+    <p>Loading. Built with Veautiful.</p>
+</div>
+
+    <script>
+        // As we're not hosting the Lava Maze images, we need to tell the Lava Maze library where to get them from
+        lavaSettings = {
+            imageBase: "https://www.wbillingsley.com/lavamaze/"
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>
+
+    <!-- Asyncify, for turning student synchronous code Async -->
+    <script src="https://www.wbillingsley.com/asyncify/dist/main.js"></script>
+
+    <!-- Matter.js, for physics simulation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.js"></script>
+    
+    <!-- Location when site generated locally -->
+    <script type="text/javascript" src="./target/scala-3.0.0/iticse2021talk-opt.js"></script>
+    <!-- Location deployed to by CI -->
+    <script type="text/javascript" src="./deployscripts/compiled.js"></script>
+    <script>
+        document.documentElement.style.zoom = 1
+        ITICSESite.main()
+    </script>
+
+</body>
+</html>
